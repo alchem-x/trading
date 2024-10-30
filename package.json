@@ -1,0 +1,36 @@
+{
+  "name": "trading",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server/main.js",
+    "dev": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "webpack --mode=production"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@emotion/css": "^11.13.4",
+    "@vue/babel-plugin-jsx": "^1.2.5",
+    "babel-loader": "^9.2.1",
+    "express": "^4.21.1",
+    "html-webpack-plugin": "^5.6.3",
+    "lil-gui": "^0.19.2",
+    "lodash": "^4.17.21",
+    "lowdb": "^7.0.1",
+    "naive-ui": "^2.40.1",
+    "pinia": "^2.2.5",
+    "terser-webpack-plugin": "^5.3.10",
+    "vue": "^3.5.12",
+    "vue-loader": "^17.4.2",
+    "vue-router": "^4.4.5",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
