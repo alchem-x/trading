@@ -1,0 +1,10 @@
+services:
+  nano:
+    image: public.ecr.aws/docker/library/node:21-alpine3.17
+    container_name: trading
+    ports:
+    - '127.0.0.1:3000:3000'
+    working_dir: /app
+    volumes:
+    - .:/app
+    command: ["npm", "run", "serve"]
