@@ -2,9 +2,11 @@ import { resolve } from 'node:path'
 import express, { static as serveStatic } from 'express'
 import { APP_PORT } from './common/global.js'
 import { hello } from './routers/hello.js'
+import { snowball } from './routers/snowball.js'
 
 function useRouters(app) {
     app.use(hello)
+    app.use(snowball)
 }
 
 function useStatic(app) {

@@ -24,6 +24,21 @@ export default function defineConfig(env) {
                     use: ['vue-loader'],
                 },
                 {
+                    test: /\.css$/,
+                    use: [
+                      'vue-style-loader',
+                      'css-loader',
+                    ]
+                },
+                {
+                    test: /\.less$/,
+                    use: [
+                      'vue-style-loader',
+                      'css-loader',
+                      'less-loader',
+                    ]
+                },
+                {
                     resourceQuery: /^((?!raw).)*$/,
                     test: /\.jsx?$/i,
                     use: [{
