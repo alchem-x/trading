@@ -1,5 +1,5 @@
 services:
-  nano:
+  trading:
     image: public.ecr.aws/docker/library/node:21-alpine3.17
     container_name: trading
     ports:
