@@ -9,6 +9,7 @@ function useRouters(app) {
 
 function useStatic(app) {
     app.use(serveStatic(resolve(import.meta.dirname, '..', 'dist')))
+    app.use(serveStatic(resolve(import.meta.dirname, '..', 'public')))
 }
 
 function startApp(app) {
