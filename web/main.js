@@ -16,4 +16,6 @@ function main() {
     app.mount(divRef)
 }
 
-main()
+if (typeof window !== undefined) {
+    main()
+}

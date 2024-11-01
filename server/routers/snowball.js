@@ -6,6 +6,5 @@ export const snowball = Router()
 snowball.get('/api/snowball/stock', async (req, res) => {
     const { symbol } = req.query
     const r = await getStock(symbol)
-    console.log(symbol,r)
     res.json(r)
 })
