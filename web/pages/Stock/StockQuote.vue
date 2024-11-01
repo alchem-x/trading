@@ -19,13 +19,13 @@ const items = computed(() => {
     if (quote) {
         return [
             { name: quote.symbol, value: quote.name, },
-            { name: '价格', value: `${quote.current} (${quote.chg ?? ''}, ${quote.percent ?? ''}%)`, className: { red: quote.chg > 0, green: quote.chg < 0 } },
-            { name: '最高', value: quote.high, className: 'red' },
-            { name: '最低', value: quote.low, className: 'green' },
+            { name: '价格', value: `${quote.current} (${quote.chg >= 0 ? `+${quote.chg}` : quote.chg}, ${quote.percent ?? ''}%)`, className: { red: quote.chg > 0, green: quote.chg < 0 } },
+            { name: '最高', value: quote.high, className: { red: quote.high > quote.last_close, green: quote.high < quote.last_close } },
+            { name: '最低', value: quote.low, className: { red: quote.low > quote.last_close, green: quote.low < quote.last_close } },
             { name: '今开', value: quote.open, className: { red: quote.open > quote.last_close, green: quote.open < quote.last_close } },
             { name: '昨收', value: quote.last_close, },
-            { name: '涨停', value: quote.limit_up, },
-            { name: '跌停', value: quote.limit_down, },
+            { name: '涨停', value: quote.limit_up, className: { red: quote.limit_up > quote.last_close, green: quote.limit_up < quote.last_close } },
+            { name: '跌停', value: quote.limit_down, className: { red: quote.limit_down > quote.last_close, green: quote.limit_down < quote.last_close } },
             { name: '成交量', value: simplifyNumber(Math.trunc(quote.volume / 100)) + '手', },
             { name: '成交额', value: simplifyNumber(quote.amount), },
             { name: '换手', value: quote.turnover_rate + '%', },
