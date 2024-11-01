@@ -3,7 +3,7 @@
         <img :src="'/images/stock.png'">
         <div>
             <RouterLink :to="'/stock'">
-                <NButton>
+                <NButton size="large">
                     开始摇滚 📈
                 </NButton>
             </RouterLink>
