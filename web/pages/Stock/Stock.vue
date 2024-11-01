@@ -1,27 +1,18 @@
 <template>
   <div class="stock-container">
     <div class="form">
-      <NInput @keydown.enter="onSearch" v-model:value="symbol" />
-      <NButton @click="onSearch">Search</NButton>
+      <NInput @keydown.enter="stockStore.onSearch" v-model:value="stockStore.inputSymbol" />
+      <NButton @click="stockStore.onSearch">Search</NButton>
     </div>
-    <pre v-text="data"></pre>
+    <pre v-text="stockStore.stockData"></pre>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { NButton, NInput } from 'naive-ui'
-import { getStock } from '@/apis/snowball.js'
+import { useStockStore } from '@/store/stock';
 
-const symbol = ref('SH000001')
-const data = ref('')
-
-async function onSearch() {
-  const stock = await getStock(symbol.value)
-  if (stock) {
-    data.value = JSON.stringify(stock, null, 2)
-  }
-}
+const stockStore = useStockStore()
 </script>
 
 <style scoped lang="less">

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const Index = () => import('./pages/Index.vue')
-const Stock = () => import('./pages/Stock.vue')
+const Stock = () => import('./pages/Stock/Stock.vue')
 
 export function createAppRouter() {
     return createRouter({
