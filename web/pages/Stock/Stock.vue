@@ -1,8 +1,8 @@
 <template>
   <div class="stock-container">
     <div class="form">
-      <NInput @keydown.enter="onSearch" v-model:value="inputSymbol" placeholder="输入股票代码" />
-      <NButton @click="onSearch">搜索</NButton>
+      <NInput size="large" @keydown.enter="onSearch" v-model:value="inputSymbol" placeholder="输入股票代码" />
+      <NButton size="large" @click="onSearch">搜索</NButton>
     </div>
     <StockQuote />
   </div>

@@ -50,6 +50,7 @@ const items = computed(() => {
     .item {
         display: flex;
         gap: .25rem;
+        font-size: 16px;
 
         .name {
             color: #111;
